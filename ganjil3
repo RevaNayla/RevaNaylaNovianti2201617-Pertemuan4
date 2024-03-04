@@ -1,0 +1,36 @@
+import java.util.Scanner;
+
+public class ganjil3 {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        int a, b, c;
+
+        // Menerima input dan memastikan a <= b <= c
+        do {
+            System.out.print("Masukkan panjang sisi a: ");
+            a = input.nextInt();
+
+            System.out.print("Masukkan panjang sisi b (b >= a): ");
+            b = input.nextInt();
+
+            System.out.print("Masukkan panjang sisi c (c >= b): ");
+            c = input.nextInt();
+
+            if (a > b || b > c) {
+                System.out.println("Masukkan tidak valid. Pastikan a <= b <= c.");
+            }
+        } while (a > b || b > c);
+
+        // Menggunakan hukum Pythagoras untuk menentukan jenis segitiga
+        if (a * a + b * b == c * c) {
+            System.out.println("Segitiga Siku-Siku");
+        } else if (a * a + b * b < c * c) {
+            System.out.println("Segitiga Tumpul");
+        } else {
+            System.out.println("Segitiga Lancip");
+        }
+
+        input.close();
+    }
+}
